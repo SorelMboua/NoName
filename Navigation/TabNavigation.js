@@ -1,11 +1,17 @@
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs'
 import OffresNavigation from '../Navigation/OffresNavigation'
-import Reglages from '../Components/Reglages'
+import ReglagesNavigation from './ReglagesNavigation';
+import SauvegardeesNavigation from './SauvegardeesNavigation';
+import DemandesNavigation from './DemandesNavigation';
 
-const TabNavigator = createBottomTabNavigator({
+const TabNavigator = createBottomTabNavigator(
+  {
     Offres: OffresNavigation,
-    Reglages: Reglages,
-  });
+    Sauvegardées: SauvegardeesNavigation,
+    Demandes: DemandesNavigation,
+    Réglages: ReglagesNavigation
+  }
+);
 
 export default createAppContainer(TabNavigator)

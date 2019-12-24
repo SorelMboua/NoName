@@ -1,14 +1,13 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
-import Offres from '../Components/Offres'
 import OffreDetails from '../Components/OffreDetails'
-import { Icon } from 'react-native-elements';
+import Sauvegardees from '../Components/sauvegardees';
 
-const OffresStackNavigator = createStackNavigator({
-  Offres: {
-    screen: Offres,
+const SauvegardeesStackNavigator = createStackNavigator({
+  Sauvegardees: {
+    screen: Sauvegardees,
     navigationOptions: {
-      title: "Offres"
+      title: "Offres Sauvegardées"
     }
   },
   OffreDetails: {
@@ -16,4 +15,4 @@ const OffresStackNavigator = createStackNavigator({
   }
 });
 
-export default createAppContainer(OffresStackNavigator)
+export default createAppContainer(SauvegardeesStackNavigator)
