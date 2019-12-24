@@ -9,7 +9,7 @@ export default liste = [
     prix: 1000,
     image: 'https://previews.123rf.com/images/eljanstock/eljanstock1808/eljanstock180802522/106869261-women-icon-vector-isolated-on-white-background-women-transparent-sign.jpg',
     employer: 'Nigga',
-    color:''
+    color:'#FFA500'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export default liste = [
     prix: 800,
     image: 'https://previews.123rf.com/images/eljanstock/eljanstock1808/eljanstock180802522/106869261-women-icon-vector-isolated-on-white-background-women-transparent-sign.jpg',
     employer: 'Bruuuh',
-    color:''
+    color:'#32CD32'
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export default liste = [
     prix: 1500,
     image: 'https://previews.123rf.com/images/eljanstock/eljanstock1808/eljanstock180802522/106869261-women-icon-vector-isolated-on-white-background-women-transparent-sign.jpg',
     employer: 'Zango La Dozo',
-    color:''
+    color:'#FFA500'
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export default liste = [
     prix: 1400,
     image: 'https://previews.123rf.com/images/eljanstock/eljanstock1808/eljanstock180802522/106869261-women-icon-vector-isolated-on-white-background-women-transparent-sign.jpg',
     employer: 'Nyangono',
-    color:''
+    color:'#32CD32'
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ export default liste = [
     prix: 600,
     image: 'https://previews.123rf.com/images/eljanstock/eljanstock1808/eljanstock180802522/106869261-women-icon-vector-isolated-on-white-background-women-transparent-sign.jpg',
     employer: 'Grand Barrack',
-    color:''
+    color:'#FFA500'
   },
   {
     id: 6,
@@ -69,6 +69,6 @@ export default liste = [
     prix: 400,
     image: 'https://previews.123rf.com/images/eljanstock/eljanstock1808/eljanstock180802522/106869261-women-icon-vector-isolated-on-white-background-women-transparent-sign.jpg',
     employer: 'Dunno',
-    color:''
+    color:'#32CD32'
   }
 ]

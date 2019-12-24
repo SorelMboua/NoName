@@ -2,14 +2,17 @@ import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 var usedColor = '#000000';
-var leftColor = '#123259';
+//var leftColor = '#123259';
 
 class OffreItem extends React.Component {
+
   render() {
-    const { offre } = this.props;
+
+    const { offre, displayDetailForOffre } = this.props;
+
     return (
-      <View style={styles.main_container}>
-        <View style={styles.color}></View>
+      <TouchableOpacity style={styles.main_container} onPress={() => displayDetailForOffre(offre)}>
+        <View style={styles.color_container} backgroundColor={offre.color}></View>
         <View style={styles.image_container}>
           <Image
             style={{ width: 60, height: 60, borderRadius: 60 / 2, marginTop: 24 }}
@@ -31,7 +34,7 @@ class OffreItem extends React.Component {
           <Text style={styles.prix_text}>{offre.prix}</Text>
           <Text style={styles.prix_devise}>XAF</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -46,9 +49,9 @@ const styles = StyleSheet.create({
     borderColor: usedColor,
     borderWidth: 0.5,
   },
-  color: {
+  color_container: {
     flex: 0.1,
-    backgroundColor: leftColor
+    //backgroundColor: leftColor
   },
   image_container: {
     flex: 1

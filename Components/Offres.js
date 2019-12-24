@@ -6,27 +6,36 @@ import Footer from './Footer';
 import listeOffres from '../FakeData/listeOffres';
 
 var usedColor = '#000000';
+
 class Offres extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  _displayDetailForOffre = (offre) => {
+    this.props.navigation.navigate("OffreDetails", {offre: offre})
+  }
+
   render() {
     return (
       <View style={styles.main_Container}>
-        <Header
+        {/*<Header
           leftComponent={{ icon: 'sort', color: '#fff' }}
           centerComponent={{ text: 'Offres', style: { fontSize: 20, color: '#fff' } }}
           rightComponent={{ icon: 'edit', color: '#fff' }}
           containerStyle={{
             backgroundColor: '#276FBF',
           }}
-        />
+        />*/}
         <TextInput style={styles.TextInput} placeholder='Mots-clés...' onSubmitEditing={() => alert('Submitted')} onChangeText={(text) => console.log('text is ===>', text)} />
-        <ScrollView style={styles.content_Container}>
+        <View style={styles.content_Container}>
           <FlatList
             data={listeOffres}
             keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => <OffreItem offre={item} />}
+            renderItem={({ item }) => <OffreItem offre={item} displayDetailForOffre={this._displayDetailForOffre} />}
           />
-        </ScrollView>
-        <Footer />
+        </View>
+        {/*<Footer />*/}
       </View>
     );
   }
