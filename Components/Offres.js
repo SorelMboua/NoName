@@ -1,11 +1,9 @@
 import React from 'react';
-import { ActivityIndicator, FlatList, Text, ScrollView, StyleSheet, View, TextInput } from 'react-native';
-import { Header } from 'react-native-elements';
+import { StatusBar, FlatList, Text, ScrollView, StyleSheet, View, TextInput } from 'react-native';
 import OffreItem from './OffreItem';
-import Footer from './Footer';
 import listeOffres from '../FakeData/listeOffres';
 
-var usedColor = '#000000';
+var usedColor = '#6a51ae';
 
 class Offres extends React.Component {
   constructor(props) {
@@ -19,14 +17,7 @@ class Offres extends React.Component {
   render() {
     return (
       <View style={styles.main_Container}>
-        {/*<Header
-          leftComponent={{ icon: 'sort', color: '#fff' }}
-          centerComponent={{ text: 'Offres', style: { fontSize: 20, color: '#fff' } }}
-          rightComponent={{ icon: 'edit', color: '#fff' }}
-          containerStyle={{
-            backgroundColor: '#276FBF',
-          }}
-        />*/}
+        <StatusBar barStyle="light-content" />
         <TextInput style={styles.TextInput} placeholder='Mots-clés...' onSubmitEditing={() => alert('Submitted')} onChangeText={(text) => console.log('text is ===>', text)} />
         <View style={styles.content_Container}>
           <FlatList
@@ -35,7 +26,6 @@ class Offres extends React.Component {
             renderItem={({ item }) => <OffreItem offre={item} displayDetailForOffre={this._displayDetailForOffre} />}
           />
         </View>
-        {/*<Footer />*/}
       </View>
     );
   }

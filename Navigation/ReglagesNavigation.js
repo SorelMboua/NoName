@@ -6,7 +6,7 @@ const ReglagesStackNavigator = createStackNavigator({
   Reglages: {
     screen: Reglages,
     navigationOptions: {
-      title: "Reglages"
+      title: "Réglages"
     }
   }
 });

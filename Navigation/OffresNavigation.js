@@ -2,18 +2,54 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
 import Offres from '../Components/Offres'
 import OffreDetails from '../Components/OffreDetails'
-import { Icon } from 'react-native-elements';
 
 const OffresStackNavigator = createStackNavigator({
   Offres: {
     screen: Offres,
     navigationOptions: {
-      title: "Offres"
+      title: "Offres",
+      headerStyle: {
+        backgroundColor: '#6a51ae',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
     }
   },
   OffreDetails: {
-    screen: OffreDetails
+    screen: OffreDetails,
+    navigationOptions: {
+      title: "Détails de l'offre",
+      headerTintColor: '#6a51ae',
+      tabBarVisible: false
+    }
   }
 });
+
+OffresStackNavigator.navigationOptions = ({ navigation }) => {
+  let tabBarVisible;
+  if (navigation.state.routes.length > 1) {
+    navigation.state.routes.map(route => {
+      if (route.routeName === "OffreDetails") {
+        tabBarVisible = false;
+      } else {
+        tabBarVisible = true;
+      }
+    });
+  }
+
+  return {
+    tabBarVisible
+  };
+};
+
+/*
+
+      headerStyle: {
+        backgroundColor: '#FF0000',
+      },
+      headerTintColor: '#fff', 
+*/
 
 export default createAppContainer(OffresStackNavigator)

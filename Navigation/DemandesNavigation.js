@@ -7,7 +7,14 @@ const DemandesStackNavigator = createStackNavigator({
     screen: Demandes,
     navigationOptions: {
       title: "Demandes"
-    }
+    },
+    headerStyle: {
+      backgroundColor: '#6a51ae',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
   }
 });
 

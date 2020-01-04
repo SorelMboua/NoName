@@ -21,6 +21,14 @@ class Footer extends React.Component {
   render() {
     return (
       <View style={styles.main_Footer}>
+        {/*<Header
+          leftComponent={{ icon: 'sort', color: '#fff' }}
+          centerComponent={{ text: 'Offres', style: { fontSize: 20, color: '#fff' } }}
+          rightComponent={{ icon: 'edit', color: '#fff' }}
+          containerStyle={{
+            backgroundColor: '#276FBF',
+          }}
+        />*/}
         <View style={styles.offres}>
           <Icon type="ionicon" name="ios-briefcase" size={this.state.iconSize} color={this.state.demandes} onPress={() => alert('offres')} />
         </View>

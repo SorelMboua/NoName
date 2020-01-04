@@ -50,8 +50,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
   },
   color_container: {
-    flex: 0.1,
-    //backgroundColor: leftColor
+    flex: 0.1
   },
   image_container: {
     flex: 1
