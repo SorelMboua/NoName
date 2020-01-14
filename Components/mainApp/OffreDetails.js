@@ -26,8 +26,8 @@ class OffreDetails extends React.Component {
             <View style={styles.left_date}>
               <Text style={styles.left_date} numberOfLines={1}>{offre.date}</Text>
             </View>
-            <View style={styles.left_adress}>
-              <Text style={styles.left_adress} numberOfLines={1}>{offre.adress}</Text>
+            <View style={styles.left_address}>
+              <Text style={styles.left_address} numberOfLines={1}>{offre.address}</Text>
             </View>
             <View style={styles.left_complement}>
               <Text style={styles.left_complement} numberOfLines={2}>{offre.complement}</Text>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     paddingTop: 5
   },
-  left_adress: {
+  left_address: {
     flex: 1,
     fontWeight: 'bold',
     fontSize: 16,

@@ -1,6 +1,6 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
-import Reglages from '../Components/Reglages'
+import Reglages from '../Components/mainApp/Reglages'
 
 const ReglagesStackNavigator = createStackNavigator({
   Reglages: {

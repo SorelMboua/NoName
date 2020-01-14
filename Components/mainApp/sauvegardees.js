@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, FlatList, Text, ScrollView, StyleSheet, View, TextInput } from 'react-native';
 import OffreItem from './OffreItem';
-import listeOffres from '../FakeData/listeOffres';
+import listeOffres from '../../FakeData/listeOffres';
 
 var usedColor = '#000000';
 

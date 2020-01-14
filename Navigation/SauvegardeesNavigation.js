@@ -1,7 +1,7 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
-import OffreDetails from '../Components/OffreDetails'
-import Sauvegardees from '../Components/sauvegardees';
+import OffreDetails from '../Components/mainApp/OffreDetails'
+import Sauvegardees from '../Components/mainApp/sauvegardees';
 
 const SauvegardeesStackNavigator = createStackNavigator({
   Sauvegardees: {

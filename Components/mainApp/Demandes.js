@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     width: 50,
     borderRadius: 100,
     backgroundColor: 'rgb(195, 125, 198)',
-
   }
 });
 

@@ -23,8 +23,8 @@ class OffreItem extends React.Component {
           <View style={styles.title_container}>
             <Text style={styles.title_text} numberOfLines={2}>{offre.title}</Text>
           </View>
-          <View style={styles.adresse_container}>
-            <Text style={styles.adresse_text} numberOfLines={1}>{offre.adress}</Text>
+          <View style={styles.addresse_container}>
+            <Text style={styles.addresse_text} numberOfLines={1}>{offre.address}</Text>
           </View>
           <View style={styles.date_container}>
             <Text style={styles.date_text} numberOfLines={1}>{offre.date}</Text>
@@ -77,10 +77,10 @@ const styles = StyleSheet.create({
     color: usedColor,
     fontSize: 20
   },
-  adresse_container: {
+  addresse_container: {
     flex: 1
   },
-  adresse_text: {
+  addresse_text: {
     textAlign: 'left',
     color: usedColor,
     fontSize: 14

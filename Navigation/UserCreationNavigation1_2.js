@@ -1,12 +1,12 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
-import Demandes from '../Components/mainApp/Demandes';
+import InscriptionPage1 from '../Components/signUp/InscriptionPage1';
 
-const DemandesStackNavigator = createStackNavigator({
-  Demandes: {
-    screen: Demandes,
+const UserCreation1_2StackNavigator = createStackNavigator({
+  InscriptionPage1: {
+    screen: InscriptionPage1,
     navigationOptions: {
-      title: "Demandes"
+      title: "Informations personnelles"
     },
     headerStyle: {
       backgroundColor: '#6a51ae',
@@ -18,4 +18,4 @@ const DemandesStackNavigator = createStackNavigator({
   }
 });
 
-export default createAppContainer(DemandesStackNavigator)
+export default createAppContainer(UserCreation1_2StackNavigator)

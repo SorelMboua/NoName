@@ -1,7 +1,7 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
-import Offres from '../Components/Offres'
-import OffreDetails from '../Components/OffreDetails'
+import Offres from '../Components/mainApp/Offres'
+import OffreDetails from '../Components/mainApp/OffreDetails'
 
 const OffresStackNavigator = createStackNavigator({
   Offres: {
@@ -43,13 +43,5 @@ OffresStackNavigator.navigationOptions = ({ navigation }) => {
     tabBarVisible
   };
 };
-
-/*
-
-      headerStyle: {
-        backgroundColor: '#FF0000',
-      },
-      headerTintColor: '#fff', 
-*/
 
 export default createAppContainer(OffresStackNavigator)

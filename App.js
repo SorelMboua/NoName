@@ -1,13 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Offres from './Components/Offres';
-import OffresNavigation from './Navigation/OffresNavigation';
+import { StyleSheet } from 'react-native';
 import TabNavigation from './Navigation/TabNavigation';
+import UserCreationNavigation1_2 from './Navigation/UserCreationNavigation1_2';
 
 export default class App extends React.Component {
   render() {
     return (
-      <TabNavigation />
+      <UserCreationNavigation1_2 />
     );
   }
 }
