@@ -1,12 +1,11 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import TabNavigation from './Navigation/TabNavigation';
-import UserCreationNavigation1_2 from './Navigation/UserCreationNavigation1_2';
+import InscriptionToMain from './Navigation/InscriptionToMain';
 
 export default class App extends React.Component {
   render() {
     return (
-      <UserCreationNavigation1_2 />
+      <InscriptionToMain />
     );
   }
 }
