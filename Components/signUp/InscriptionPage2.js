@@ -1,7 +1,8 @@
 import React from 'react';
-import { ScrollView, StyleSheet, StatusBar, TextInput, Button, View, Text } from 'react-native';
+import { Image, StyleSheet, StatusBar, TextInput, TouchableOpacity, View, Text, ScrollView, LayoutAnimation } from 'react-native';
+import { Ionicons } from "@expo/vector-icons";
+import Firebase from '../../api/Firebase';
 
-var usedColor = '#000000';
 var message = 'Remplissez les champs !';
 var user = {
   name: '',
@@ -24,50 +25,94 @@ class InscriptionPage2 extends React.Component {
         password: '',
         phoneNumber: '',
       },
-      emailLabel: 'exemple@test.com',
+      emailLabel: 'Email',
       passwordLabel: 'Mot de passe',
-      phoneNumberLabel: 'Tel 000000000',
-      nextLabel: 'Créer un compte'
+      phoneNumberLabel: 'Téléphone',
+      nextLabel: 'Créer un compte',
+      SignUpLabel1: 'Déjà inscrit ? ',
+      SignUpLabel2: 'Connectez-vous'
     }
+  }
+
+  _setPhoneNumber = (text) => {
+    user.phoneNumber = text;
+    this.setState({ User: user });
+  }
+
+  _setEmail = (text) => {
+    user.email = text;
+    this.setState({ User: user });
+  }
+
+  _setPassword = (text) => {
+    user.password = text;
+    this.setState({ User: user });
   }
 
   _onPressButton = () => {
     if (user.email != '' && user.phoneNumber != '' && user.password != '') {
-      this.setState({ User: user }, () => {
-        console.log(this.state.User);
-        this.props.navigation.navigate("TabNavigation", { user: this.state.User });
-      });
+      this.setState({ User: user });
+      console.log(this.state.User);
+      Firebase.shared.signUp(user)
+        .then(this.props.navigation.navigate("TabNavigation", { user: user }))
     } else {
       alert(message);
     }
   }
 
   render() {
+    LayoutAnimation.easeInEaseOut();
     const { navigation } = this.props;
     user = navigation.getParam('user');
     return (
       <ScrollView style={styles.main_Container}>
         <StatusBar barStyle="dark-content" />
+        <Image source={require('../../assets/Help_me.png')} style={{ height: 320, width: 300, marginTop: 35, marginLeft: 50 }} />
+        <TouchableOpacity style={styles.back} onPress={() => this.props.navigation.navigate('InscriptionPage1')}>
+          <Ionicons name="ios-arrow-round-back" size={32} color="#FFF"></Ionicons>
+        </TouchableOpacity>
         <View style={styles.content_Container}>
-          <View style={styles.uniqueBoutton}>
-            <TextInput placeholder={this.state.phoneNumberLabel} style={styles.TextInput1} onSubmitEditing={() => { }} onChangeText={(text) => user.phoneNumber = text} />
-          </View>
-          <View style={styles.uniqueBoutton}>
-            <TextInput placeholder={this.state.emailLabel} style={styles.TextInput2} onSubmitEditing={() => { }} onChangeText={(text) => user.email = text} />
-          </View>
-          <View style={styles.uniqueBoutton}>
-            <TextInput secureTextEntry autoCorrect={false} placeholder={this.state.passwordLabel} style={styles.TextInput2} onSubmitEditing={() => { }} onChangeText={(text) => user.password = text} />
-          </View>
-        </View>
-        <View style={styles.buttonContainer}>
-          <View style={styles.nextBoutton}>
-            {/* Nothing here */}
-          </View>
-          <View style={styles.nextBouttonContainer}>
-            <Button
-              onPress={this._onPressButton}
-              title={this.state.nextLabel}
-            />
+          <View style={styles.form}>
+            <View>
+              <Text style={styles.inputTitle}>{this.state.phoneNumberLabel}</Text>
+              <TextInput
+                style={styles.input}
+                onChangeText={(text) => this._setPhoneNumber(text)}
+                value={this.state.User.phoneNumber}
+              />
+            </View>
+
+            <View style={{ marginTop: 32 }}>
+              <Text style={styles.inputTitle}>{this.state.emailLabel}</Text>
+              <TextInput
+                style={styles.input}
+                autoCapitalize="none"
+                onChangeText={(text) => this._setEmail(text)}
+                value={this.state.User.email}
+              />
+            </View>
+
+            <View style={{ marginTop: 32 }}>
+              <Text style={styles.inputTitle}>{this.state.passwordLabel}</Text>
+              <TextInput
+                style={styles.input}
+                secureTextEntry
+                onChangeText={(text) => this._setPassword(text)}
+                value={this.state.User.password}
+              />
+            </View>
+
+            <TouchableOpacity style={styles.button} onPress={this._onPressButton}>
+              <Text style={{ color: "#FFF", fontWeight: "500" }}>{this.state.nextLabel}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{ alignSelf: "center", marginTop: 20 }}
+              onPress={() => this.props.navigation.navigate('Login')}
+            >
+              <Text style={{ color: "#414959", fontSize: 13 }}>
+                {this.state.SignUpLabel1} <Text style={{ fontWeight: "500", color: "#F79862" }}>{this.state.SignUpLabel2}</Text>
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -80,29 +125,40 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 5,
   },
-  Label: {
-    marginLeft: 15,
-    marginBottom: 5,
-    fontSize: 16,
-    color: usedColor
+  form: {
+    marginTop: 10,
+    marginBottom: 48,
+    marginHorizontal: 30
   },
-  TextInput1: {
-    margin: 15,
-    marginTop: 0,
-    height: 50,
-    borderColor: usedColor,
-    borderBottomWidth: 1,
-    borderWidth: 0,
-    paddingLeft: 5,
+  inputTitle: {
+    color: "#8A8F9E",
+    fontSize: 10,
+    textTransform: "uppercase"
   },
-  TextInput2: {
-    margin: 15,
-    marginTop: 0,
-    height: 50,
-    borderColor: usedColor,
-    borderBottomWidth: 1,
-    borderWidth: 0,
-    paddingLeft: 5,
+  input: {
+    borderBottomColor: "#8A8F9E",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    height: 40,
+    fontSize: 15,
+    color: "#161F3D"
+  },
+  picker: {
+    height: 45,
+    width: '70%',
+    color: "#8A8F9E",
+  },
+  pickerItem: {
+    height: 45,
+    color: "#161F3D"
+  },
+  button: {
+    marginHorizontal: 30,
+    marginTop: 40,
+    backgroundColor: "#F79862",
+    borderRadius: 4,
+    height: 52,
+    alignItems: "center",
+    justifyContent: "center"
   },
   loading_container: {
     position: 'absolute',
@@ -114,22 +170,30 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   content_Container: {
-    flex: 10,
+    flex: 12,
     marginTop: 15
   },
-  buttonContainer: {
-    flex: 2,
-    flexDirection: "row",
-    marginLeft: 15,
-    marginRight: 15,
-    marginBottom: 30
+  back: {
+    position: "absolute",
+    top: 48,
+    left: 32,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: "#F79862",
+    alignItems: "center",
+    justifyContent: "center"
   },
-  uniqueBoutton: {
-    flex: 1,
+  birthdate: {
+    flex: 3,
+    marginTop: 8,
+    flexDirection: 'row',
   },
-  nextBouttonContainer: {
+  dateContainer: {
     flex: 1,
-    flexDirection: 'row-reverse',
+    marginTop: 20,
+    marginLeft: 5,
+    marginRight: 5,
   }
 });
 

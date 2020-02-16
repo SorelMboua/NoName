@@ -6,8 +6,15 @@ const ReglagesStackNavigator = createStackNavigator({
   Reglages: {
     screen: Reglages,
     navigationOptions: {
-      title: "Réglages"
-    }
+      title: "Réglages",
+      headerStyle: {
+        backgroundColor: '#6a51ae',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
   }
 });
 

@@ -12,7 +12,6 @@ class OffreItem extends React.Component {
 
     return (
       <TouchableOpacity style={styles.main_container} onPress={() => displayDetailForOffre(offre)}>
-        <View style={styles.color_container} backgroundColor={offre.color}></View>
         <View style={styles.image_container}>
           <Image
             style={{ width: 60, height: 60, borderRadius: 60 / 2, marginTop: 24 }}
@@ -42,15 +41,14 @@ class OffreItem extends React.Component {
 const styles = StyleSheet.create({
   main_container: {
     height: 120,
+    backgroundColor: 'white',
     marginTop: 15,
     marginLeft: 10,
     marginRight: 10,
     flexDirection: 'row',
     borderColor: usedColor,
-    borderWidth: 0.5,
-  },
-  color_container: {
-    flex: 0.1
+    borderWidth: 0.8,
+    borderRadius: 10,
   },
   image_container: {
     flex: 1

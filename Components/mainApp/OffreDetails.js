@@ -20,7 +20,7 @@ class OffreDetails extends React.Component {
     this._getOffre(offre);
     return (
       <ScrollView style={styles.main_Container}>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="light-content" />
         <View style={styles.header_container}>
           <View style={styles.left_container}>
             <View style={styles.left_date}>

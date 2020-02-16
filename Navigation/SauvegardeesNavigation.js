@@ -3,17 +3,20 @@ import { createStackNavigator } from 'react-navigation-stack'
 import OffreDetails from '../Components/mainApp/OffreDetails'
 import Sauvegardees from '../Components/mainApp/sauvegardees';
 
+var colorToUse = '#F79862';
+
 const SauvegardeesStackNavigator = createStackNavigator({
   Sauvegardees: {
     screen: Sauvegardees,
     navigationOptions: {
-      title: "Offres Sauvegardées",
+      title: "Sauvegardees",
       headerStyle: {
-        backgroundColor: '#6a51ae',
+        backgroundColor: colorToUse,
       },
-      headerTintColor: '#fff',
       headerTitleStyle: {
-        fontWeight: 'bold',
+        marginStart: - 170,
+        fontSize: 22,
+        color: '#fff'
       },
     }
   },
@@ -21,8 +24,13 @@ const SauvegardeesStackNavigator = createStackNavigator({
     screen: OffreDetails,
     navigationOptions: {
       title: "Détails de l'offre",
-      headerTintColor: '#6a51ae',
-      tabBarVisible: false
+      headerTintColor: '#fff',
+      tabBarVisible: false,
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        color: '#000',
+      },
     }
   }
 });
@@ -44,4 +52,4 @@ SauvegardeesStackNavigator.navigationOptions = ({ navigation }) => {
   };
 };
 
-export default createAppContainer(SauvegardeesStackNavigator);
+export default createAppContainer(SauvegardeesStackNavigator)

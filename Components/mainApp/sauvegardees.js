@@ -3,7 +3,7 @@ import { ActivityIndicator, FlatList, Text, ScrollView, StyleSheet, View, TextIn
 import OffreItem from './OffreItem';
 import listeOffres from '../../FakeData/listeOffres';
 
-var usedColor = '#000000';
+var bgColor = '#F2F1F1';
 
 class Sauvegardees extends React.Component {
   constructor(props) {
@@ -27,7 +27,9 @@ class Sauvegardees extends React.Component {
   render() {
     return (
       <View style={styles.main_Container}>
-        <TextInput style={styles.TextInput} placeholder='Mots-clés...' onSubmitEditing={() => alert('Submitted')} onChangeText={(text) => console.log('text is ===>', text)} />
+        <View style={styles.input}>
+          <TextInput style={styles.TextInput} placeholder='Mots-clés...' onSubmitEditing={() => alert('Submitted')} onChangeText={(text) => console.log('text is ===>', text)} />
+        </View>
         <View style={styles.content_Container}>
           <FlatList
             data={this._filterData(listeOffres)}
@@ -42,15 +44,21 @@ class Sauvegardees extends React.Component {
 
 const styles = StyleSheet.create({
   main_Container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: bgColor
   },
   TextInput: {
-    marginTop: 15,
+    marginTop: 5,
     margin: 10,
-    height: 50,
-    borderColor: usedColor,
+    height: 40,
+    borderColor: '#8A8F9E',
     borderWidth: 0.5,
-    paddingLeft: 5
+    paddingLeft: 15,
+    borderRadius: 90,
+    backgroundColor: 'white'
+  },
+  input: {
+    backgroundColor: '#F79862'
   },
   loading_container: {
     position: 'absolute',
@@ -63,7 +71,7 @@ const styles = StyleSheet.create({
   },
   content_Container: {
     flex: 8,
-    marginBottom: 15
+    marginBottom: 25
   }
 });
 

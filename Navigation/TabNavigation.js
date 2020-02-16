@@ -7,7 +7,7 @@ import SauvegardeesNavigation from './SauvegardeesNavigation';
 import DemandesNavigation from './DemandesNavigation';
 import { Icon } from 'react-native-elements';
 
-var colorToUse = '#6a51ae'
+var colorToUse = '#F79862'
 
 OffresNavigation.navigationOptions = ({ navigation }) => {
   let tabBarVisible = true;
@@ -36,10 +36,11 @@ const TabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: 'Offres',
         tabBarOptions: {
-          activeTintColor: colorToUse
+          activeTintColor: colorToUse,
+          inactiveTintColor: '#414959'
         },
-        tabBarIcon: ({ tintColor }) => (
-          <Icon type="ionicon" name="ios-briefcase" color={tintColor} size={25} />
+        tabBarIcon: ({ focused, tintColor }) => (
+          <Icon type="ionicon" name="ios-briefcase" color={ focused? tintColor : 'black' } size={25} />
         )
       }
     },
@@ -48,10 +49,11 @@ const TabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: 'Sauvegardées',
         tabBarOptions: {
-          activeTintColor: colorToUse
+          activeTintColor: colorToUse,
+          inactiveTintColor: '#414959'
         },
-        tabBarIcon: ({ tintColor }) => (
-          <Icon type="ionicon" name="ios-bookmark" color={tintColor} size={25} />
+        tabBarIcon: ({ focused, tintColor }) => (
+          <Icon type="ionicon" name="ios-bookmark" color={ focused? tintColor : 'black' } size={25} />
         )
       }
     },
@@ -60,10 +62,11 @@ const TabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: 'Demandes',
         tabBarOptions: {
-          activeTintColor: colorToUse
+          activeTintColor: colorToUse,
+          inactiveTintColor: '#414959'
         },
-        tabBarIcon: ({ tintColor }) => (
-          <Icon type="ionicon" name="ios-folder-open" color={tintColor} size={25} />
+        tabBarIcon: ({ focused, tintColor }) => (
+          <Icon type="ionicon" name="ios-folder-open" color={ focused? tintColor : 'black' } size={25} />
         )
       }
     },
@@ -72,10 +75,11 @@ const TabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarLabel: 'Réglages',
         tabBarOptions: {
-          activeTintColor: colorToUse
+          activeTintColor: colorToUse,
+          inactiveTintColor:'#414959'
         },
-        tabBarIcon: ({ tintColor }) => (
-          <Icon type="ionicon" name="ios-cog" color={tintColor} size={25} />
+        tabBarIcon: ({ focused, tintColor }) => (
+          <Icon type="ionicon" name="ios-cog" color={ focused? tintColor : 'black' } size={25} />
         )
       }
     }
