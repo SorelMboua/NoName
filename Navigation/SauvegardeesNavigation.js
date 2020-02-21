@@ -24,6 +24,7 @@ const SauvegardeesStackNavigator = createStackNavigator({
     screen: OffreDetails,
     navigationOptions: {
       title: "Détails de l'offre",
+      header: null,
       headerTintColor: '#fff',
       tabBarVisible: false,
       headerTitleStyle: {

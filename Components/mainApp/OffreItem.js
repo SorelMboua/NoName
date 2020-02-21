@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
 
 var usedColor = '#000000';
-//var leftColor = '#123259';
+var colorToUse = '#FF4500';
 
 class OffreItem extends React.Component {
 
@@ -101,14 +101,14 @@ const styles = StyleSheet.create({
     flex: 3,
     fontWeight: 'bold',
     fontSize: 24,
-    color: usedColor,
+    color: colorToUse,
     textAlign: 'center',
     paddingTop: 40
   },
   prix_devise: {
     flex: 2,
     fontWeight: 'bold',
-    color: usedColor,
+    color: colorToUse,
     fontSize: 11,
     textAlign: 'right',
     paddingBottom: 18

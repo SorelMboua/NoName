@@ -1,4 +1,4 @@
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, NavigationEvents } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'
 import Offres from '../Components/mainApp/Offres'
 import OffreDetails from '../Components/mainApp/OffreDetails'
@@ -24,12 +24,15 @@ const OffresStackNavigator = createStackNavigator({
     screen: OffreDetails,
     navigationOptions: {
       title: "Détails de l'offre",
+      header: null,
+      headerStyle: {
+        backgroundColor: colorToUse,
+      },
       headerTintColor: '#fff',
       tabBarVisible: false,
       headerTitleStyle: {
-        fontWeight: 'bold',
-        fontSize: 16,
-        color: '#000',
+        fontSize: 20,
+        color: '#fff',
       },
     }
   }

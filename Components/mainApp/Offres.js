@@ -3,7 +3,7 @@ import { StatusBar, FlatList, Text, StyleSheet, TouchableOpacity, View, TextInpu
 import OffreItem from './OffreItem';
 import listeOffres from '../../FakeData/listeOffres';
 
-var bgColor = '#F2F1F1';
+var bgColor = '#F8F8F8';
 
 class Offres extends React.Component {
   constructor(props) {

@@ -2,6 +2,8 @@ import React from 'react'
 import { StyleSheet, StatusBar, Text, Image, View, Button, TouchableOpacity } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 
+var bgColor = '#F8F8F8';
+
 class Demandes extends React.Component {
   constructor(props) {
     super(props)
@@ -25,7 +27,8 @@ class Demandes extends React.Component {
 
 const styles = StyleSheet.create({
   main_Container: {
-    flex: 12
+    flex: 12,
+    backgroundColor: bgColor
   },
   demandes: {
     flex: 11
